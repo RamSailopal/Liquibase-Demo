@@ -1,0 +1,34 @@
+{
+    "databaseChangeLog": [ 
+    {
+        "changeSet": {
+        "id": "newtable1",
+        "author": "Ram",
+        "changes": [
+            {
+            "createTable": {
+                "catalogName": "liquibase",
+                "columns": [
+                {
+                    "column": {
+                    "name": "name",
+                    "type": "varchar(255)"
+                    }
+                },
+                {
+                    "column": {
+                    "name": "address",
+                    "type": "varchar(255)"
+                    }
+                }
+                ],
+                "remarks": "Test change",
+                "schemaName": "public",
+                "tableName": "liquibase"
+            }
+            }
+        ]
+        }
+    } 
+    ]
+  }

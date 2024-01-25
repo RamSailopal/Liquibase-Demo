@@ -1,0 +1,28 @@
+{
+    "databaseChangeLog": [ 
+    {
+        "changeSet": {
+        "id": "newcolumn1",
+        "author": "Ram",
+        "changes": [
+            {
+                "addColumn": {
+                    "catalogName":"liquibase",
+                    "columns": [
+                       {
+                         "column": {
+                            "name":"club",
+                            "type":"varchar(255)"
+                          } 
+                       }
+                    ],
+                    "remarks": "Add new column",
+                    "schemaName":"public",
+                    "tableName":"liquibase"
+                   }
+            }
+        ]
+        }
+    } 
+    ]
+  }
