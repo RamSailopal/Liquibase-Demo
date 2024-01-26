@@ -164,6 +164,14 @@ To "revert" the previous create column step, we need to rollback to the tag **BE
 
 One last check of the liquibase table should show it as no longer having the club column.
 
+### Row inserts
+
+Where as some sql update conventions have automatic rollback built into liquibase (as we have seen for table column creation), row inserts have no automatic roll back functionality. Rollback instruction have to therefore be specified in the change log files as can be seen within **Changelog/changelog2.json** and **Changelog/changelog3.json**
+
+changelog2.json contains a liquibase insert change type and then a delete change type within roll back. These can be tested in much the same way as we have done previously using **update**, **tag** and **rollback** referencing changelog2.json
+
+As an alternative to insert and delete change types, native sql can be placed in the file using the sql change type. This is seen in changelog3.json. 
+
 ### References
 
 [Liquibase](https://docs.liquibase.com/home.html)

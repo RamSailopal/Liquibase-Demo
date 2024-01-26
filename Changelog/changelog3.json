@@ -1,0 +1,31 @@
+{
+    "databaseChangeLog": [ 
+    {
+        "changeSet": {
+        "id": "insert1",
+        "author": "Ram",
+        "changes": [
+            {
+                "sql": {
+                    "catalogName":"liquibase",
+                    "sql": "insert into liquibase (name, address) values ('Jason Koumas', 'Somewhere or other')",
+                    "remarks": "Insert a new value",
+                    "schemaName":"public",
+                    "tableName":"liquibase"
+                   }
+            }
+        ],
+        "rollback": [
+            {
+                "sql": {
+                    "catalogName":"liquibase",
+                    "sql": "delete from liquibase where name = 'Jason Koumas'",
+                    "remarks": "Roll back insert",
+                    "schemaName":"public",
+                    "tableName":"liquibase"
+                   }
+            }
+        ]
+    }
+    }]
+}

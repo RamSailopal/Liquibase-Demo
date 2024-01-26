@@ -1,0 +1,52 @@
+{
+    "databaseChangeLog": [ 
+    {
+        "changeSet": {
+        "id": "insert1",
+        "author": "Ram",
+        "changes": [
+            {
+                "insert": {
+                    "catalogName":"liquibase",
+                    "columns": [
+                       {
+                         "column": {
+                            "name":"name",
+                            "value":"Jason Koumas"
+                          } 
+                       },
+                       {
+                        "column": {
+                           "name":"address",
+                           "value":"Somewhere or other"
+                         } 
+                      }
+                    ],
+                    "remarks": "Insert a new value",
+                    "schemaName":"public",
+                    "tableName":"liquibase"
+                   }
+            }
+        ],
+        "rollback": [
+            {
+                "delete": {
+                    "catalogName":"liquibase",
+                    "schemaName":"public",
+                    "remarks": "Roll back insert",
+                    "tableName":"liquibase",
+                    "where": "name='Jason Koumas'",
+                    "whereParams": [
+                        {
+                            "param": {
+                                "name": "id",
+                                "value": "str"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    }]
+}
